@@ -1,3 +1,5 @@
+import os
+
 class Store():
     def __init__(self):
         self.shoes = []
@@ -6,6 +8,7 @@ class Store():
         self.shoes.append(shoe)
 
     def displayShoes(self):
+        os.system('clear')
         print("\nYour store contains: ")
         for item in self.shoes:
             print(item.get_shoe_details())
