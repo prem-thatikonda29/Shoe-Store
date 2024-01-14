@@ -101,6 +101,13 @@ def add_shoe():
     elif choice=='2':
         color = request.form['color'].capitalize()
         lowOrHigh = request.form['low/high'].capitalize()
+        tongue = request.form['tongue'].capitalize()
+        converse = Converse(color,lowOrHigh,tongue)
+        store.addToStore(converse)
+        converse.add_shoe(converse)
+
+    elif choice=='3':
+        color = request.form['color'].capitalize()
         
 
     return render_template('index.html')
