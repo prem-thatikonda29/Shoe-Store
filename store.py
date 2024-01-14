@@ -108,7 +108,15 @@ def add_shoe():
 
     elif choice=='3':
         color = request.form['color'].capitalize()
-        
+        brand = request.form['brand'].capitalize()
+        branch = request.form['Militiary branch'].capitalize()
+        jd = request.form['Camouflage'].capitalize()
+        combatShoe = CombatShoe(color,brand,branch,jd)
+        store.addToStore(combatShoe)
+        combatShoe.add_shoe(combatShoe)
+
+    # elif choice=='4':
+    #     color = request.form['color'].capitalize()
 
     return render_template('index.html')
 
