@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+</head>
+<body>
+    <h1>Shoe Store</h1>
+    <form action="/add_shoe" method="post">
+        <label for="choice">Choose Type:</label>
+        <select name="choice" id="choice">
+            <option value="1">Regular Shoes</option>
+            <option value="2">Converse Shoes</option>
+            <option value="3">Combat Shoes</option>
+            <!-- <option value="4">Sandals</option>
+            <option value="5">Vans</option> -->
+        </select>
+        <br>
+    
+        {% if request.form['choice'] == '1' %}
+            <!-- Input fields for Regular Shoes -->
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+            <br>
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required>
+            <br>
+            <!-- Add any other necessary fields for Regular Shoes -->
+        
+        {% elif request.form['choice'] == '2' %}
+            <!-- Input fields for Converse Shoes -->
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+            <br>
+            <label for="low_or_high">Low or High Top:</label>
+            <input type="text" id="low_or_high" name="low_or_high" required>
+            <br>
+            <label for="tongue_color">Tongue Color:</label>
+            <input type="text" id="tongue_color" name="tongue_color" required>
+            <br>
+            <!-- Add any other necessary fields for Converse Shoes -->
+
+        {% elif request.form['choice'] == '3' %}
+            <!-- Input fields for Combat Shoes -->
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+            <br>
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required>
+            <br>
+            <label for="military_branch">Military Branch:</label>
+            <input type="text" id="military_branch" name="military_branch" required>
+            <br>
+            <label for="jd">Jungle or Desert:</label>
+            <input type="text" id="jd" name="jd" required>
+            <br>
+    
+        <!-- {% elif request.form['choice'] == '4' %}
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+            <br>
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required>
+            <br>
+            <label for="openOrClosed">Open or Closed Toe:</label>
+            <input type="text" id="openOrClosed" name="openOrClosed" required>
+            <br>
+            <label for="waterproof">Waterproof (Yes/No):</label>
+            <input type="text" id="waterproof" name="waterproof" required>
+            <br> -->
+            <!-- Add any other necessary fields for Sandals -->
+    
+        <!-- {% elif request.form['choice'] == '5' %}
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" required>
+            <br>
+            <label for="low_or_high">Low or High Top:</label>
+            <input type="text" id="low_or_high" name="low_or_high" required>
+            <br>
+            <label for="laces">Laced or Unlaced:</label>
+            <input type="text" id="laces" name="laces" required>
+            <br> -->
+            <!-- Add any other necessary fields for Vans -->
+    
+        {% endif %}
+    
+        <button type="submit">Add Shoe</button>
+    </form>
+    
+    <a href="/display_shoes">Display Shoes</a>
+</body>
+</html>
